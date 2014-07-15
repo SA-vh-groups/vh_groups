@@ -12,6 +12,7 @@ package org.sa.vh;
 public class Configuration {
 
     private final static String VERSION = "0.0.0.1";
+    private final static String TITLE = "EH";
 
     static {
 

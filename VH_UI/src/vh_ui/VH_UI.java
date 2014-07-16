@@ -6,6 +6,9 @@
 
 package vh_ui;
 
+import org.sa.vh.talent.PersonParameter;
+import org.sa.vh.talent.PersonParameter.Talent;
+
 /**
  *
  * @author Salister
@@ -17,6 +20,9 @@ public class VH_UI {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        System.out.println(Talent.toString(PersonParameter.Talent.sober));
+        
     }
     
 }

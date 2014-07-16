@@ -5,6 +5,8 @@
  */
 package org.sa.vh.manager;
 
+import java.util.List;
+import org.sa.vh.model.Character;
 import org.sa.vh.model.Enemy;
 
 /**
@@ -49,6 +51,16 @@ public class Rounder {
     }
     
     public void nextRound() {
+        // HP低於0
+        if (player.getParameter().getHp() < 0) {
+            return;
+        }
+        
+        //腳色選擇行動
+        List charThink = player.getThink();
+        Object p = player.think(charThink);
+        
+        //開始行動
         
     }
 }

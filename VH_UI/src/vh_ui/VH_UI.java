@@ -6,6 +6,12 @@
 
 package vh_ui;
 
+import org.sa.vh.Parameter.Parameter;
+import org.sa.vh.manager.Rounder;
+import org.sa.vh.model.Character;
+import org.sa.vh.model.Enemy;
+import org.sa.vh.model.enemyGroup.Goblin;
+import org.sa.vh.model.playerGroup.Hero;
 import org.sa.vh.talent.PersonParameter;
 import org.sa.vh.talent.PersonParameter.Talent;
 
@@ -21,7 +27,13 @@ public class VH_UI {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        System.out.println(Talent.toString(PersonParameter.Talent.sober));
+        Character c = new Hero();
+        Enemy e = new Goblin();
+
+        Rounder r = new Rounder(c, e);
+        r.nextRound();
+        r.nextRound();
+        r.nextRound();
         
     }
     

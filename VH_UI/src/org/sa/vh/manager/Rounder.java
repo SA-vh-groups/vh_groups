@@ -17,7 +17,7 @@ public class Rounder {
 
     Character player;
     Enemy enemy;
-    
+
 //    我方的行動
 //
 //思考目前能量狀態(HP之類)
@@ -44,23 +44,34 @@ public class Rounder {
 //
 //交換回合
 //敵方的行動
-
     public Rounder(Character player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
     }
-    
+
     public void nextRound() {
         // HP低於0
         if (player.getParameter().getHp() < 0) {
             return;
         }
-        
-        //腳色選擇行動
+
+        // 腳色選擇行動
         List charThink = player.getThink();
         Object p = player.think(charThink);
+
+        // 開始行動
+        enemy.underAttack(p);
+
+        // 行動對我方的影響
+        player.attackFeedBack(p);
+
+        // HP低於0
+        if (enemy.getParameter().getHp() < 0) {
+            return;
+        }
         
-        //開始行動
-        
+        // 換敵人的行動
+        Object t = enemy.think();
+        player.underAttack(t);
     }
 }

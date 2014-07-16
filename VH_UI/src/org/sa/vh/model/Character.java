@@ -35,4 +35,12 @@ public class Character {
     public void attack() {
         System.out.println("Character is attack");
     }
+
+    public void attackFeedBack(Object p) {
+        System.out.println("Character has feedback");
+    }
+
+    public void underAttack(Object t) {
+        System.out.println("Character is under Attack!!");
+    }
 }

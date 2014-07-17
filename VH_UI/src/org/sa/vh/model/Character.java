@@ -7,12 +7,13 @@ package org.sa.vh.model;
 
 import java.util.List;
 import org.sa.vh.Parameter.Parameter;
+import org.sa.vh.action.Action;
 
 /**
  *
  * @author Salister
  */
-public class Character {
+public abstract class Character {
 
     Parameter parameter;
 
@@ -23,24 +24,14 @@ public class Character {
     public void setParameter(Parameter parameter) {
         this.parameter = parameter;
     }
-    
-    public List getThink() {
-        return null;
-    }
-    
-    public Object think(List list) {
-        return null;
-    }
-    
-    public void attack() {
-        System.out.println("Character is attack");
-    }
 
-    public void attackFeedBack(Object p) {
-        System.out.println("Character has feedback");
-    }
+    public abstract List<Action> getThink();
 
-    public void underAttack(Object t) {
-        System.out.println("Character is under Attack!!");
-    }
+    public abstract Action think(List<Action> list);
+
+    public abstract void attack();
+
+    public abstract void attackFeedBack(Object p);
+
+    public abstract void underAttack(Object t);
 }

@@ -6,6 +6,7 @@
 package org.sa.vh.manager;
 
 import java.util.List;
+import org.sa.vh.action.Action;
 import org.sa.vh.model.Character;
 import org.sa.vh.model.Enemy;
 
@@ -57,13 +58,13 @@ public class Rounder {
 
         // 腳色選擇行動
         List charThink = player.getThink();
-        Object p = player.think(charThink);
+        Action playerAction = player.think(charThink);
 
         // 開始行動
-        enemy.underAttack(p);
+        enemy.underAttack(playerAction);
 
         // 行動對我方的影響
-        player.attackFeedBack(p);
+        player.attackFeedBack(playerAction);
 
         // HP低於0
         if (enemy.getParameter().getHp() < 0) {

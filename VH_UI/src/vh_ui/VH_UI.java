@@ -11,7 +11,7 @@ import org.sa.vh.manager.Rounder;
 import org.sa.vh.model.Character;
 import org.sa.vh.model.Enemy;
 import org.sa.vh.model.enemyGroup.Goblin;
-import org.sa.vh.model.playerGroup.Hero;
+import org.sa.vh.model.playerGroup.TestHero;
 import org.sa.vh.talent.PersonParameter;
 import org.sa.vh.talent.PersonParameter.Talent;
 
@@ -27,7 +27,7 @@ public class VH_UI {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Character c = new Hero();
+        Character c = new TestHero();
         Enemy e = new Goblin();
 
         Rounder r = new Rounder(c, e);

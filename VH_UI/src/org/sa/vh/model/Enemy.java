@@ -6,6 +6,7 @@
 package org.sa.vh.model;
 
 import org.sa.vh.Parameter.EnemyParameter;
+import org.sa.vh.action.Action;
 
 /**
  *
@@ -23,8 +24,8 @@ public class Enemy {
         this.parameter = parameter;
     }
 
-    public void underAttack(Object o) {
-        System.out.println("enemy is under attack!!");
+    public void underAttack(Action action) {
+        action.active();
     }
 
     public void attack() {

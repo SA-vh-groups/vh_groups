@@ -6,9 +6,13 @@
 package org.sa.vh.model.playerGroup;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import org.sa.vh.Parameter.Parameter;
 import org.sa.vh.action.Action;
+import org.sa.vh.action.active.Kick;
 import org.sa.vh.action.active.Punch;
 import org.sa.vh.model.Character;
 
@@ -41,22 +45,37 @@ public class TestHero extends Character {
 
     /**
      * 列出所有可選的行動
-     * @return 
+     * <p>
+     * @return
      */
     @Override
     public List<Action> getThink() {
         ArrayList<Action> list = new ArrayList<>();
         list.add(new Punch());
+        list.add(new Kick());
+
+        for (Action action : list) {
+            action.calculateWeight(this);
+        }
         return list;
     }
 
     /**
      * 做出一個選擇來行動
+     * <p>
      * @param list
-     * @return 
+     * @return
      */
     @Override
     public Action think(List<Action> list) {
+        Collections.sort(list, new Comparator<Action>() {
+
+            @Override
+            public int compare(Action a1, Action a2) {
+                return a1.getWeight() > a2.getWeight() ? 1 : a1.getWeight() < a2.getWeight() ? 0 : -1;
+            }
+        });
+        
         /**
          * 對於每一個可能的行動，由最高的比重開始選擇，若選中則結束
          */

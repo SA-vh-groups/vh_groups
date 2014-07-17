@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package org.sa.vh.action.active;
 
 import org.sa.vh.action.Action;
@@ -12,24 +13,24 @@ import org.sa.vh.model.Character;
  *
  * @author Salister
  */
-public class Punch extends Action {
+public class Kick extends Action{
 
-    public Punch() {
-        power = 15.0f;
+    public Kick() {
+        power = 20.0f;
     }
     
     @Override
     public void active() {
-        System.out.println("enemy is punched!!");
+        System.out.println("enemy is kicked!!");
     }
 
     @Override
     public void calculateWeight(Character character) {
         if (character.getParameter().getHp() > 50.0f) {
-            weight = 5.0f;
+            weight = 4.0f;
         } else {
-            weight = 3.0f;
+            weight = 6.0f;
         }
     }
-
+    
 }

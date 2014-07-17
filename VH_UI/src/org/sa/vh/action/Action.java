@@ -5,13 +5,33 @@
  */
 package org.sa.vh.action;
 
+import org.sa.vh.model.Character;
+
 /**
  *
  * @author Salister
  */
 public abstract class Action {
 
-    float power;
+    /**
+     * 權重 表示此行動的可能性
+     */
+    protected float weight;
+    protected float power;
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public float getPower() {
+        return power;
+    }
+
+    public abstract void calculateWeight(Character character);
 
     public abstract void active();
 }

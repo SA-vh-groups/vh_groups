@@ -25,6 +25,13 @@ public abstract class Character {
         this.parameter = parameter;
     }
 
+    /**
+     * 首先列出可能的選項
+     * 在去除當下不可能的選項
+     * 最後將每個選項列出權重比
+     * <p>
+     * @return
+     */
     public abstract List<Action> getThink();
 
     public abstract Action think(List<Action> list);

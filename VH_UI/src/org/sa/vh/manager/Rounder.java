@@ -61,7 +61,7 @@ public class Rounder {
         Action playerAction = player.think(charThink);
 
         // 開始行動
-        enemy.underAttack(playerAction);
+        player.attack(enemy, playerAction);
 
         // 行動對我方的影響
         player.attackFeedBack(playerAction);

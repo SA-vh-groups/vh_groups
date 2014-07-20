@@ -18,6 +18,7 @@ public abstract class Action {
      */
     protected float weight;
     protected float power;
+    protected float cost;
 
     public float getWeight() {
         return weight;
@@ -29,6 +30,10 @@ public abstract class Action {
 
     public float getPower() {
         return power;
+    }
+
+    public float getCost() {
+        return cost;
     }
 
     public abstract void calculateWeight(Character character);

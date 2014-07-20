@@ -16,6 +16,7 @@ public class Punch extends Action {
 
     public Punch() {
         power = 15.0f;
+        cost = 10.0f;
     }
     
     @Override

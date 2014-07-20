@@ -17,6 +17,7 @@ public class Kick extends Action{
 
     public Kick() {
         power = 20.0f;
+        cost = 12.0f;
     }
     
     @Override

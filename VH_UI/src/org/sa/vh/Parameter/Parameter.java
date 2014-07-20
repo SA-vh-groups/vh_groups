@@ -54,7 +54,10 @@ public class Parameter {
         this.vitality = vitality;
     }
     
-    
+    public float addEnergy(float f) {
+        energy -= f;
+        return energy;
+    }
 
     
     private String name;

@@ -36,7 +36,28 @@ public abstract class Character {
 
     public abstract Action think(List<Action> list);
 
-    public abstract void attack();
+    /**
+     * 攻擊對方
+     * @param enemy　攻擊的對象
+     * @param action 採取的行動
+     */
+    public void attack(Enemy enemy, Action action) {
+        onPreAttack(action);
+        enemy.underAttack(action);
+        onPostAttack();
+    }
+
+    /**
+     * 行動開始前，通常是能量消耗
+     * @param action 
+     */
+    protected void onPreAttack(Action action) {
+        parameter.addEnergy(action.getCost());
+    }
+
+    protected void onPostAttack() {
+
+    }
 
     public abstract void attackFeedBack(Object p);
 

@@ -31,14 +31,12 @@ public class TestHero extends Character {
         setParameter(p);
     }
 
-    public void attack() {
-        System.out.println("Character is attack");
-    }
-
+    @Override
     public void attackFeedBack(Object p) {
         System.out.println("Character has feedback");
     }
 
+    @Override
     public void underAttack(Object t) {
         System.out.println("Character is under Attack!!");
     }

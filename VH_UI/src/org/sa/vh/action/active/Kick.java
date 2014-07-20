@@ -26,7 +26,7 @@ public class Kick extends Action{
 
     @Override
     public void calculateWeight(Character character) {
-        if (character.getParameter().getHp() > 50.0f) {
+        if (character.getParameter().getEnergy()> 50.0f) {
             weight = 4.0f;
         } else {
             weight = 6.0f;

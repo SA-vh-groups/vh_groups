@@ -12,24 +12,50 @@ package org.sa.vh.Parameter;
  */
 public class Parameter {
 
-    float hp;
-    float sp;
+    /**
+     * 體力，代表當前可行動的能量
+     * 體力越高越有利於行動，行動會消耗體力
+     */
+    float energy;
+    
+    /**
+     * 健康，代表單位的生命
+     * 健康為0代表死亡，一般健康度不太會被下降
+     */
+    float health;
+    
+    /**
+     * 活力，類似新陳代謝的狀況
+     * 活力越高，恢復體力的速度就越快，活力越大意味者越能快速恢復狀況
+     */
+    float vitality;
 
-    public float getHp() {
-        return hp;
+    public float getEnergy() {
+        return energy;
     }
 
-    public void setHp(float hp) {
-        this.hp = hp;
+    public void setEnergy(float energy) {
+        this.energy = energy;
     }
 
-    public float getSp() {
-        return sp;
+    public float getHealth() {
+        return health;
     }
 
-    public void setSp(float sp) {
-        this.sp = sp;
+    public void setHealth(float health) {
+        this.health = health;
     }
+
+    public float getVitality() {
+        return vitality;
+    }
+
+    public void setVitality(float vitality) {
+        this.vitality = vitality;
+    }
+    
+    
+
     
     private String name;
     private float value;

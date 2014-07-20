@@ -26,7 +26,7 @@ public class TestHero extends Character {
         super();
 
         Parameter p = new Parameter();
-        p.setHp(100);
+        p.setHealth(100);
 
         setParameter(p);
     }

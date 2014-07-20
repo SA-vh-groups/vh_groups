@@ -52,7 +52,7 @@ public class Rounder {
 
     public void nextRound() {
         // HP低於0
-        if (player.getParameter().getHp() < 0) {
+        if (player.getParameter().getHealth()< 0) {
             return;
         }
 

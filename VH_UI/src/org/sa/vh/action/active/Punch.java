@@ -25,7 +25,7 @@ public class Punch extends Action {
 
     @Override
     public void calculateWeight(Character character) {
-        if (character.getParameter().getHp() > 50.0f) {
+        if (character.getParameter().getEnergy()> 50.0f) {
             weight = 5.0f;
         } else {
             weight = 3.0f;
